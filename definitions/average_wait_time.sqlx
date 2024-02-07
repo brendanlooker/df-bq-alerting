@@ -1,6 +1,6 @@
 
 config {
-  type: "table",
+  type: "incremental",
   columns: {
     incident_type: "Incident Type",
     project_id: "Prodject Id", 
@@ -10,11 +10,12 @@ config {
   }
 }
 
-
+ insert into  ${dataform.projectConfig.vars.dataset}.bq_alerting
+ (incident_type, project_id, job_id, message, log_ts)
  select  'average_wait_time' as incident_type,
           project_id,
           '' as job_id,
-          [FORMAT('Average Wait Time Threshold Exceeded in project: %s, Usage Time: %s, Avg Wait Time: %f', project_id, STRING(usage_time),avg_wait_time_min)] as message,
+          FORMAT('Average Wait Time Threshold Exceeded in project: %s, Usage Time: %s, Avg Wait Time: %f', project_id, STRING(usage_time),avg_wait_time_min) as message,
           current_timestamp() as log_ts
 
     from (
@@ -29,7 +30,7 @@ config {
                   GROUP BY project_id, usage_time 
                   ORDER BY avg_wait_time_min DESC, project_id
             )
-    WHERE avg_wait_time_min > ${dataform.projectConfig.vars.average_wait_time}
+    WHERE avg_wait_time_min < ${dataform.projectConfig.vars.average_wait_time}
         
 
 
