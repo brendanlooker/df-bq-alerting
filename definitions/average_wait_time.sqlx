@@ -30,7 +30,7 @@ config {
                   GROUP BY project_id, usage_time 
                   ORDER BY avg_wait_time_min DESC, project_id
             )
-    WHERE avg_wait_time_min < ${dataform.projectConfig.vars.average_wait_time}
+    WHERE avg_wait_time_min > ${dataform.projectConfig.vars.average_wait_time}
         
 
 
