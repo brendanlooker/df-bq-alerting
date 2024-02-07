@@ -1,5 +1,6 @@
 config {
-  type: "incremental"
+  type: "incremental",
+  dependencies: ["average_wait_time", "query_execution_run_time"]
 }
 
 -- Export data from the target table to GCS
