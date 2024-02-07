@@ -1,0 +1,15 @@
+{
+  "defaultSchema": "bq_cost_optimization",
+  "assertionSchema": "dataform_assertions",
+  "warehouse": "bigquery",
+  "defaultDatabase": "brendanlooker",
+  "defaultLocation": "EU",
+
+  "vars": {
+    "project":"brendanlooker",
+    "region":"EU",
+    "average_wait_time":"0.05",
+    "query_execution_run_time":"120"
+}
+}
+    

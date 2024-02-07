@@ -1,0 +1,6 @@
+{
+  "name": "bq_cost_optimization",
+  "dependencies": {
+    "@dataform/core": "2.8.3"
+  }
+}
