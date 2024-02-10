@@ -12,3 +12,4 @@ EXPORT DATA OPTIONS (
 
 SELECT *
 FROM `${dataform.projectConfig.vars.project}.${dataform.projectConfig.vars.dataset}`.bq_alerting
+WHERE incident_processed is False

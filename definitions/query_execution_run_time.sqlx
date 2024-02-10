@@ -9,14 +9,14 @@ config {
   }
 }
 
- insert into  ${dataform.projectConfig.vars.dataset}.bq_alerting
-(incident_type, project_id, job_id, message, log_ts)
+
 
  select  'query_execution_run_time' as incident_type,
           project_id,
           job_id,
           FORMAT('Query Execution Run Time Threshold Exceeded in project: %s, Job Id: %s, Job Start: %s, Query Execution Runtime: %i', project_id, job_id, STRING(job_start),query_execution_run_time) as message,
-          current_timestamp as log_ts
+          current_timestamp as log_ts,
+          false as incident_processed
     from (
 
         SELECT
