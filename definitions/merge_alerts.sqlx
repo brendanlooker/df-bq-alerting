@@ -1,0 +1,7 @@
+config {
+    type:"table",
+}
+
+select * from ${ref('average_wait_time')} where incident_processed is false
+union all
+select * from ${ref('query_execution_run_time')} where incident_processed is false

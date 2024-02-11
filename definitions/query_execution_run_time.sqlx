@@ -1,5 +1,5 @@
 config {
-  type: "incremental",
+  type: "view",
   columns: {
     incident_type: "Incident Type",
     project_id: "Prodject Id", 
