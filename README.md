@@ -1,3 +1,4 @@
 # df-bq-alerting
 
-![image](https://github.com/brendanlooker/df-bq-alerting/assets/46671710/deaee6a7-69af-4b39-ba03-d379fa9fb1bf)
+![image](https://github.com/brendanlooker/df-bq-alerting/assets/46671710/0f3847b3-c4f3-46a1-bf44-f149e4ab34f3)
+
