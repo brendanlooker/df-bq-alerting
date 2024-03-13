@@ -6,7 +6,7 @@
   "defaultLocation": "EU",
 
   "vars": {
-    "project":"brendanlooker",
+    "project":"project",
     "dataset": "bq_cost_optimization",
     "region":"EU",
     "average_wait_time":"0.05",
